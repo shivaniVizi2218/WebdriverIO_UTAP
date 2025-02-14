@@ -1,0 +1,39 @@
+{
+  "name": "swaglabs_webdriverio_js_master_framework",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.0.4",
+    "@wdio/appium-service": "^9.0.7",
+    "@wdio/cli": "^9.0.7",
+    "@wdio/local-runner": "^9.0.7",
+    "@wdio/mocha-framework": "^9.0.6",
+    "@wdio/spec-reporter": "^9.0.7",
+    "appium": "^2.11.3",
+    "appium-uiautomator2-driver": "^3.7.7",
+    "concurrently": "^8.2.2",
+    "npm-run-all": "^4.1.5",
+    "wait-on": "^8.0.0",
+    "wait-port": "^1.1.0"
+  },
+  "scripts": {
+    "web": "npx wdio run ./configs/wdio.web.conf.js",
+    "android": "npx wdio run ./configs/wdio.android.conf.js",
+    "api": "npx wdio run ./configs/wdio.api.conf.js",
+    "webAccessibility": "npx wdio run ./configs/wdio.webAccessibility.conf.js",
+    "k6": "k6 run ./test/specs/performance.js",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open",
+    "testWeb": "npm run web & npm run allure:generate & npm run allure:open",
+    "testAndroid": "npm run android & npm run allure:generate & npm run allure:open",
+    "testAPIs": "npm run api & npm run allure:generate & npm run allure:open",
+    "testAllParallel": "concurrently  \"npm run android\" \"npm run web\" \"npm run webAccessibility\"  \"npm run api\" \"npm run k6\"",
+    "testAll": "npm run testAllParallel & npm run allure:generate & npm run allure:open"
+  },
+  "dependencies": {
+    "@axe-core/webdriverio": "^4.9.1",
+    "@faker-js/faker": "^8.4.1",
+    "axe-html-reporter": "^2.2.5",
+    "axios": "^1.7.3",
+    "chai": "^5.1.1",
+    "glob": "^11.0.0"
+  }
+}

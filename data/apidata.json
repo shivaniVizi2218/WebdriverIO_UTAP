@@ -1,0 +1,13 @@
+{
+    "postData":{
+        "title": "foo",
+            "body": "bar",
+            "userId": 1
+    },
+    "putData":{
+        "id": 1,
+            "title": "foo updated",
+            "body": "bar updated",
+            "userId": 1
+    }
+}

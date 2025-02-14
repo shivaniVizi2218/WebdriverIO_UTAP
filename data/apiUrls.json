@@ -1,0 +1,6 @@
+{
+    "getRequestApiUrl":"https://jsonplaceholder.typicode.com/users",
+    "postRequestApiUrl": "https://jsonplaceholder.typicode.com/posts",
+    "putRequestApiUrl" :"https://jsonplaceholder.typicode.com/posts/1",
+    "deleteRequestApiUrl" : "https://jsonplaceholder.typicode.com/posts/1"
+}
